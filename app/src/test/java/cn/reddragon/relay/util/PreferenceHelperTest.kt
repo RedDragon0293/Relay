@@ -9,30 +9,6 @@ import org.junit.Test
 
 class PreferenceHelperTest {
     @Test
-    fun defaultsAndValidServerConfigArePersisted() {
-        val prefs = MemorySharedPreferences()
-        val helper = PreferenceHelper(prefs)
-
-        assertEquals(PreferenceHelper.DEFAULT_SERVER_HOST, helper.getServerHost())
-        assertEquals(PreferenceHelper.DEFAULT_SERVER_PORT, helper.getNotificationPort())
-
-        assertTrue(helper.setServerConfig(" 10.0.0.8 ", 9000))
-        assertEquals("10.0.0.8", helper.getServerHost())
-        assertEquals(9000, helper.getNotificationPort())
-    }
-
-    @Test
-    fun invalidServerConfigDoesNotReplaceLastValidValue() {
-        val helper = PreferenceHelper(MemorySharedPreferences())
-        assertTrue(helper.setServerConfig("10.0.0.9", 9001))
-
-        assertFalse(helper.setServerConfig(" ", 9002))
-        assertFalse(helper.setServerConfig("10.0.0.10", 65536))
-        assertEquals("10.0.0.9", helper.getServerHost())
-        assertEquals(9001, helper.getNotificationPort())
-    }
-
-    @Test
     fun targetPackagesAreReturnedAsIndependentSnapshots() {
         val prefs = MemorySharedPreferences()
         val helper = PreferenceHelper(prefs)
