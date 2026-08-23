@@ -34,7 +34,7 @@ internal class TcpDispatcher<T>(
             THREAD_KEEP_ALIVE_SECONDS,
             TimeUnit.SECONDS,
             queue,
-            ThreadFactory { runnable ->
+            { runnable ->
                 Thread(runnable, "RelayTcpDispatcher").apply { isDaemon = true }
             },
         ) { rejected, pool ->
