@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Relay</string>
+    <string name="module_desc">同步通知到远程服务器 — LSPosed 模块</string>
+</resources>

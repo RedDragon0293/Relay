@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme (splash/fallback, Compose takes over) -->
+    <style name="Theme.Relay" parent="android:Theme.Material.NoActionBar" />
+</resources>
